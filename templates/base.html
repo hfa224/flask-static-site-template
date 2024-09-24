@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="description" content="This is a template website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Not set up yet -->
+  <!-- link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" -->
+</head>
+
+<body>
+  <!-- Page content -->
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  <main>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+    </div>
+  </main>
+  <footer>
+    <hr>
+  </footer>
+
+</html>
